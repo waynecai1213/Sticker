@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>It's OK to Cry</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+
+    <link
+      rel="icon"
+      href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/smiling-face-with-tear_1f972.png"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
+    <script src="https://unpkg.com/p5.js-svg@1.1.1"></script>
+    <script src=" http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="generator">
+      <h1> IT'S OKAY TO CRY 🥲 </h1>
+
+      <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox -->
+      <!-- https://codepen.io/waynecai1213/pen/qBXGPvY -->
+      <div class="container">
+        <h3>Whatever mood you're in</h3>
+        <ul class="cboxtags" id="whyTags">
+          <li>
+            <input type="checkbox" id="checkbox1" value="1" checked /><label id="checkbox1L"
+              for="checkbox1"
+            >Sad</label
+            >
+          </li>
+          <li>
+            <input type="checkbox" id="checkbox2" value="2" checked /><label id="checkbox2L"
+              for="checkbox2"
+            >Happy</label
+            >
+          </li>
+          <li>
+            <input type="checkbox" id="checkbox3" value="3" checked /><label id="checkbox3L"
+              for="checkbox3"
+            >Proud</label
+            >
+          </li>
+          <li>
+            <input type="checkbox" id="checkbox4" value="4" /><label id="checkbox4L"
+              for="checkbox4"
+            >Stressed</label>
+          </li>
+          <li>
+            <input type="checkbox" id="checkbox5" value="5" /><label id="checkbox5L" 
+              for="checkbox5"
+            >Angry</label
+            >
+          </li>
+          <li>
+            <input type="checkbox"id="checkbox6" value="6" /><label id="checkbox6L" 
+              for="checkbox6"
+              >Overwhelmed  </label
+            >
+          </li>
+          <li>
+            <input type="checkbox" id="checkbox7" value="7" /><label id="checkbox7L"
+              for="checkbox7"
+              >Lonely</label
+            >
+          </li>
+          <li>
+            <input type="checkbox"id="checkbox8"  value="8" /><label id="checkbox8L"
+              for="checkbox8"
+              >Grief</label
+            >
+          </li>
+          <li>
+            <input type="checkbox" id="checkbox9" value="9" /><label id="checkbox9L"
+              for="checkbox9"
+              >Panic</label
+            >
+          </li>
+          <li>
+            <input type="checkbox" id="checkbox10" value="10" /><label id="checkbox10L"
+              for="checkbox10"
+              >Moved</label
+            >
+          </li>
+          <li>
+            <input type="checkbox" id="checkbox11" value="11" /><label id="checkbox11L"
+              for="checkbox11"
+              >Ashamed</label
+            >
+          </li>
+          <li>
+            <input type="checkbox"id="checkbox12" value="12" /><label  id="checkbox12L"
+              for="checkbox12"
+              >No Reason</label
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- <fieldset class="info">
+        <legend>What are your main reason for crying? (Select Three) </legend>
+        <ul>
+          <li>
+            <label for="name">Plant Name</label>
+            <input
+              type="text"
+            
+              name="width"
+              id="width"
+              value="Plant Name"
+            />
+          </li>
+          <li>
+            <label for="size">Size (inch)</label>
+            <input
+              type="text"
+              min="1"
+              max="8"
+              name="size"
+              id="size"
+              value="4"
+            />
+          </li>
+          <li>
+            <label for="weight">Weight (g)</label>
+            <input
+              type="text"
+              min="10"
+              max="500"
+              name="weight"
+              id="weight"
+              value="200"
+            />
+          </li>
+        </ul>
+      </fieldset> -->
+
+      <div class="center">
+        <button id="download">Print Sticker</button>
+      </div>
+    </div>
+
+    <div id="mainCanvas">
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="800"
+        height="800"
+        id="eyeBg"
+        z-linex="-1"
+       
+      >
+      <defs>
+        <radialGradient id="grad1" cx="50%" cy="50%" r="66%" fx="50%" fy="50%">
+          <stop id="gradStop1" offset="0%" style="stop-color:#FF8A80;
+          stop-opacity:0.75" />
+          <stop offset="100%" style="stop-color:rgb(255, 255, 255);stop-opacity:0" />
+        </radialGradient>
+      </defs>
+
+        <path
+          id="eyePath"
+          stroke="none"
+          fill="url(#grad1)"
+          d="M 160 400 C 270 530, 530 530, 640 400  Q 650 390, 640 380 C 530 240, 270 240, 160 380 Q 150 390 160 400 Z  "
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        
+        ></path>
+      </svg>
+
+
+      <!-- //cut line -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="800"
+        height="800"
+        id="eyeBgOutline"
+        z-linex="-1"
+      >
+
+        <path
+          id="eyePath"
+          stroke="white"
+          fill="none"
+          d="M 160 400 C 270 530, 530 530, 640 400  Q 650 390, 640 380 C 530 240, 270 240, 160 380 Q 150 390 160 400 Z  "
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        
+        ></path>
+      </svg>
+
+
+      <!-- <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="800"
+        height="800"
+        id="eyeOutline"
+      >
+        <path
+          id="eyePath"
+          stroke="black"
+          fill="none"
+          d="M 160 400 C 270 530, 530 530, 640 400  Q 650 390, 640 380 C 530 240, 270 240, 160 380 Q 150 390 160 400 Z  "
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          transform="scale(1.05, 1.1) translate(-20,-35)"
+        ></path>
+      </svg> -->
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="800"
+        height="800"
+        id="eyeUp"
+      >
+        <path
+          id="eyeUpArc"
+          stroke="black"
+          fill="none"
+          d="M 200 400 C 250 450, 550 450, 600 400"
+        ></path>
+        <text id="eyeUpText">
+          <textPath
+            xlink:href="#eyeUpArc"
+            startOffset="50%"
+            text-anchor="middle"
+          >IT'S OKAY TO CRY!</textPath>
+        </text>
+      </svg>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="800"
+        height="800"
+        id="eyeDown"
+      >
+        <path
+          id="eyeDownArc"
+          stroke="black"
+          fill="none"
+          d="M 200 400 C 250 450, 550 450, 600 400"
+        ></path>
+        <text id="eyeDownText">
+          <textPath
+            xlink:href="#eyeDownArc"
+            startOffset="50%"
+            text-anchor="middle"
+          >
+            HAPPY * LONELY * PROUD
+          </textPath>
+        </text>
+      </svg>
+    </div>
+  
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.11/paper-full.min.js"></script>
+    <script src="box_gen_02.js"></script> -->
+
+    <script src="draw_sticker.js"></script>
+    <script src="input.js"></script>
+  </body>
+</html>
