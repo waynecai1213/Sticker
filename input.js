@@ -42,3 +42,8 @@ function updateSticker(){
     draw();
 
 }
+
+function printSticker(){
+    // save('pix.png');
+    window.print();
+} 

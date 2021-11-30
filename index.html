@@ -10,10 +10,9 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@400;700;800;900&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <link
       rel="icon"
@@ -41,7 +40,7 @@
       <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox -->
       <!-- https://codepen.io/waynecai1213/pen/qBXGPvY -->
       <div class="container">
-        <h3>Whatever mood you're in</h3>
+        <h3>Whatever you're feeling</h3>
         <ul class="cboxtags" id="whyTags">
           <li>
             <input type="checkbox" id="checkbox1" value="1" checked /><label id="checkbox1L"
@@ -75,7 +74,7 @@
           <li>
             <input type="checkbox"id="checkbox6" value="6" /><label id="checkbox6L" 
               for="checkbox6"
-              >Overwhelmed  </label
+              >Exhausted  </label
             >
           </li>
           <li>
@@ -111,6 +110,19 @@
           <li>
             <input type="checkbox"id="checkbox12" value="12" /><label  id="checkbox12L"
               for="checkbox12"
+              >Empathetic</label
+            >
+          </li>
+          <li>
+            <input type="checkbox"id="checkbox13" value="13" /><label  id="checkbox13L"
+              for="checkbox13"
+              >Hurt</label
+            >
+          </li>
+
+          <li>
+            <input type="checkbox"id="checkbox14" value="14" /><label  id="checkbox14L"
+              for="checkbox14"
               >No Reason</label
             >
           </li>
@@ -156,7 +168,7 @@
       </fieldset> -->
 
       <div class="center">
-        <button id="download">Print Sticker</button>
+        <button id="download" onclick="printSticker()">Print Sticker</button>
       </div>
     </div>
 
@@ -213,24 +225,7 @@
       </svg>
 
 
-      <!-- <svg
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        width="800"
-        height="800"
-        id="eyeOutline"
-      >
-        <path
-          id="eyePath"
-          stroke="black"
-          fill="none"
-          d="M 160 400 C 270 530, 530 530, 640 400  Q 650 390, 640 380 C 530 240, 270 240, 160 380 Q 150 390 160 400 Z  "
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          transform="scale(1.05, 1.1) translate(-20,-35)"
-        ></path>
-      </svg> -->
-
+      
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"

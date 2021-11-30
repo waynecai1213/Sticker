@@ -13,8 +13,8 @@
 
 let eyeUp = document.getElementById("eyeUp");
 let eyeDown = document.getElementById("eyeDown");
-let eyeUpSize = 48;
-let eyeDownSize = 44;
+let eyeUpSize = 44;
+let eyeDownSize = 36;
 let eyeDownTxt = eyeDown.getElementsByTagName("textPath")[0].innerHTML;
 let txtLen;
 
@@ -35,8 +35,10 @@ let palette = [
   "#688CFD",
   "#30B8DB",
   "#0BCB74",
+  "#D96C80",
   "#F8B633",
-  "#F46768",
+  "#BF5DFC",
+  "#F46768"
 ];
 
 let bgPalette = [
@@ -48,7 +50,6 @@ let bgPalette = [
   "#80D8FF",
   "#81F0D7",
   "#A2F3B9",
-  "#F5F572",
   "#FFE57F",
   "#FFD180",
   "#FF9E80",
@@ -56,7 +57,11 @@ let bgPalette = [
 
 let eyeBgColor;
 
+let pg;
+
+
 function setup() {
+ 
   let canv = createCanvas(800, 800);
   canv.parent("mainCanvas");
   eyeBgColor = random(bgPalette);
@@ -66,12 +71,25 @@ function setup() {
   // background(255);
   updateSticker();
   // drawEye();
-
+  noiseTexture();
+  image(pg, 0, 0);
   noLoop();
 }
 
-function drawEye() {
+// https://openprocessing.org/sketch/1322812
+function noiseTexture() {
+  pg = createGraphics(width, height);
+  pg.noStroke();
+  for (let i = 0; i < 30000; i++) {
+    let x = random(width);
+    let y = random(height);
+    let n = noise(x * 0.01, y * 0.01) * width * 0.002;
+    pg.fill(200, 70);
+    pg.ellipse(x, y, n, n);
+  }
+}
 
+function drawEye() {
   eyeUp.setAttribute("width", `${width}`);
   eyeUp.setAttribute("height", `${height - 10}`);
   eyeUp
@@ -207,8 +225,11 @@ function drawColor(tearPalette, tearNum) {
 
     pop();
   }
+  noiseTexture();
+  image(pg, 0, 0);
 }
 
 function draw() {
   // background(255);
+ 
 }
