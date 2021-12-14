@@ -5,8 +5,13 @@
     
     /* font-weight: regular; */
     margin: 0;
-    background-color: #eefdff;
-     /* background-color: #fff; */
+    /* background-color: rgb(183, 226, 255); */
+  
+    background: linear-gradient(to bottom, #B9D1FF , #CDF2FB) ;
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   
   /* canvas {
@@ -16,11 +21,18 @@
 
   h1{
     margin-top: 100px;
-    font-weight: 700;
-    color: #344DB6;
+    margin-bottom: 10px;
+    font-size: 3em;
+    font-weight: 500;
+    /* color: #344DB6; */
+    color: #0D35D9;
   }
+
   h3{
-    color: #344DB6;
+   
+    font-weight: 500;
+    /* color: #344DB6; */
+    color: #0D35D9;
   }
   
   svg {
@@ -205,18 +217,23 @@
     background: none;
     margin-bottom: 1em;
     cursor: pointer;
-    color: #8C9EFF; 
-    border: 2px solid #8C9EFF;
+    color: #0D35D9; 
+    /* border: 2px solid #8C9EFF; */
+      border: 2px solid #0D35D9;
+    
    display: inline-flex;
   }
   button:hover {
-    background-color: #8C9EFF;
-    color: white;
+    /* background-color: #8C9EFF; */
+    border: 2px solid #0D35D9;
+    background-color: #0D35D9;
+
+    color: #fff;
   
         
   }
   button:hover:active {
-    background: #cee;
+    background: #0D35D9;
   }
 
 
